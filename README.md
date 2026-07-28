@@ -47,7 +47,7 @@ A stunning, production-ready hackathon registration website built with React + V
 ## 📁 Project Structure
 
 ```
-hackx-2025/
+dsc
 ├── public/
 │   └── favicon.svg
 ├── src/
@@ -90,7 +90,7 @@ hackx-2025/
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/hackx-2025.git
+git clone https://github.com/Ritik0712-ai/dsc.git
 
 # Navigate to project directory
 cd hackx-2025
@@ -116,7 +116,7 @@ npm run preview
 
 ## 🌐 Live Deployment
 
-**Deployed on:** [Vercel](#)
+**Deployed on Netlify:** [https://hackathonreg.netlify.app](https://hackathonreg.netlify.app)
 
 ### Deploy Instructions
 1. Push your code to GitHub
