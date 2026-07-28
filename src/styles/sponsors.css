@@ -1,0 +1,242 @@
+/* ===================================
+   Sponsors Section Styles
+   =================================== */
+
+.sponsors {
+  position: relative;
+}
+
+.sponsors-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Sponsor Tier */
+.sponsor-tier {
+  margin-bottom: 60px;
+}
+
+.sponsor-tier:last-child {
+  margin-bottom: 0;
+}
+
+.tier-label {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.tier-label::before,
+.tier-label::after {
+  content: '';
+  flex: 1;
+  max-width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-color));
+}
+
+.tier-label::after {
+  background: linear-gradient(90deg, var(--border-color), transparent);
+}
+
+/* Gold Tier */
+.tier-label.gold {
+  color: #fbbf24;
+}
+
+.tier-label.gold::before,
+.tier-label.gold::after {
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.3));
+}
+
+.tier-label.gold::after {
+  background: linear-gradient(90deg, rgba(251, 191, 36, 0.3), transparent);
+}
+
+/* Silver Tier */
+.tier-label.silver {
+  color: #94a3b8;
+}
+
+/* Bronze Tier */
+.tier-label.bronze {
+  color: #cd7f32;
+}
+
+/* Sponsor Grid */
+.sponsor-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/* Sponsor Card */
+.sponsor-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+}
+
+.sponsor-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.sponsor-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--accent-primary);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4),
+              0 0 40px var(--accent-primary-glow);
+}
+
+.sponsor-card:hover::before {
+  opacity: 0.05;
+}
+
+/* Gold Tier Cards */
+.sponsor-card.gold-card {
+  padding: 40px 64px;
+  min-width: 260px;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(245, 158, 11, 0.05));
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.sponsor-card.gold-card:hover {
+  border-color: #fbbf24;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4),
+              0 0 50px rgba(251, 191, 36, 0.3);
+}
+
+/* Silver Tier Cards */
+.sponsor-card.silver-card {
+  padding: 32px 48px;
+  min-width: 220px;
+  background: linear-gradient(135deg, rgba(148, 163, 184, 0.1), rgba(100, 116, 139, 0.05));
+  border-color: rgba(148, 163, 184, 0.2);
+}
+
+.sponsor-card.silver-card:hover {
+  border-color: #94a3b8;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4),
+              0 0 40px rgba(148, 163, 184, 0.2);
+}
+
+/* Bronze Tier Cards */
+.sponsor-card.bronze-card {
+  padding: 28px 40px;
+  min-width: 180px;
+  background: linear-gradient(135deg, rgba(205, 127, 50, 0.1), rgba(184, 115, 51, 0.05));
+  border-color: rgba(205, 127, 50, 0.2);
+}
+
+.sponsor-card.bronze-card:hover {
+  border-color: #cd7f32;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4),
+              0 0 40px rgba(205, 127, 50, 0.2);
+}
+
+/* Sponsor Logo/Name */
+.sponsor-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+  transition: color var(--transition-fast);
+}
+
+.sponsor-card.gold-card .sponsor-name {
+  font-size: 1.5rem;
+}
+
+.sponsor-card.silver-card .sponsor-name {
+  font-size: 1.25rem;
+}
+
+.sponsor-card.bronze-card .sponsor-name {
+  font-size: 1.1rem;
+}
+
+.sponsor-card:hover .sponsor-name {
+  color: var(--accent-primary);
+}
+
+/* Sponsor Icon */
+.sponsor-icon {
+  font-size: 2rem;
+  margin-right: 12px;
+  opacity: 0.8;
+}
+
+/* Become a Sponsor CTA */
+.become-sponsor {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-color);
+}
+
+.become-sponsor p {
+  margin-bottom: 20px;
+  font-size: 1.125rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sponsor-card,
+  .sponsor-card.gold-card,
+  .sponsor-card.silver-card,
+  .sponsor-card.bronze-card {
+    padding: 24px 32px;
+    min-width: 160px;
+  }
+
+  .sponsor-card.gold-card .sponsor-name {
+    font-size: 1.25rem;
+  }
+
+  .sponsor-card.silver-card .sponsor-name {
+    font-size: 1.1rem;
+  }
+
+  .sponsor-card.bronze-card .sponsor-name {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsor-grid {
+    gap: 16px;
+  }
+
+  .sponsor-card,
+  .sponsor-card.gold-card,
+  .sponsor-card.silver-card,
+  .sponsor-card.bronze-card {
+    padding: 20px 24px;
+    min-width: 140px;
+  }
+}

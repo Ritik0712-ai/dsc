@@ -1,0 +1,235 @@
+/* ===================================
+   Schedule Section Styles
+   =================================== */
+
+.schedule {
+  position: relative;
+}
+
+.schedule-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Vertical Timeline */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.5s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Timeline Node */
+.timeline-node {
+  position: absolute;
+  left: -33px;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  background: var(--bg-primary);
+  border: 3px solid var(--accent-primary);
+  border-radius: 50%;
+  z-index: 1;
+  transition: all var(--transition-fast);
+}
+
+.timeline-item:hover .timeline-node {
+  background: var(--accent-primary);
+  box-shadow: 0 0 20px var(--accent-primary-glow);
+  transform: scale(1.2);
+}
+
+/* Day Header */
+.timeline-day {
+  margin-bottom: 30px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: var(--radius-md);
+  display: inline-block;
+  margin-left: -20px;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.timeline-day.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-day h4 {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.timeline-day span {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Event Card */
+.timeline-event {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-left: 10px;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.timeline-event::before {
+  content: '';
+  position: absolute;
+  left: -29px;
+  top: 50%;
+  width: 20px;
+  height: 2px;
+  background: var(--accent-primary);
+  opacity: 0.5;
+  transition: all var(--transition-fast);
+}
+
+.timeline-item:hover .timeline-event::before {
+  width: 25px;
+  opacity: 1;
+}
+
+.timeline-event:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3),
+              0 0 30px var(--accent-primary-glow);
+  transform: translateX(5px);
+}
+
+.timeline-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent-secondary);
+  margin-bottom: 8px;
+}
+
+.timeline-time-icon {
+  font-size: 0.75rem;
+}
+
+.timeline-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.timeline-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 30px;
+  }
+
+  .timeline::before {
+    left: 10px;
+  }
+
+  .timeline-node {
+    left: -27px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .timeline-day {
+    margin-left: 0;
+    padding: 10px 20px;
+  }
+
+  .timeline-event {
+    padding: 20px;
+    margin-left: 5px;
+  }
+
+  .timeline-event::before {
+    left: -23px;
+    width: 15px;
+  }
+
+  .timeline-item:hover .timeline-event::before {
+    width: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline {
+    padding-left: 24px;
+  }
+
+  .timeline::before {
+    left: 7px;
+  }
+
+  .timeline-node {
+    left: -22px;
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
+  }
+
+  .timeline-day h4 {
+    font-size: 1rem;
+  }
+
+  .timeline-event {
+    padding: 16px;
+  }
+
+  .timeline-title {
+    font-size: 1.1rem;
+  }
+
+  .timeline-event::before {
+    left: -19px;
+    width: 12px;
+  }
+}
